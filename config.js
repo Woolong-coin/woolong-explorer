@@ -1,4 +1,4 @@
-var api = 'http://162.219.245.108:11898';
+var api = 'http://pool.woolongs.com:11898';
 var donationAddress = "WwaFjmWQrNG1h1bSVcP8UjKYL1nHRHp5sGVVSX9pZmtFjfPFfBi4XoJCWewvjXU4gxGmuiNpZSBLd4sgRWnusrNS15x8facrx";
 var blockTargetInterval = 120; // enter the block interval in seconds
 var coinUnits = 100000000;  // enter in the amount of atomic units in 1 coin, eg. 100000000 = 1 woo
@@ -9,7 +9,7 @@ var refreshDelay = 30000;
 // pools stats by MainCoins
 var networkStat = {
  "WOO": [
-	["162.219.245.108", "http://162.219.245.108:8117"],
+	["pool.woolongs.com/", "http://pool.woolongs.com:8117"],
 	["woo.cryptonote.club", "http://woo.cryptonote.club:8117"]
  ]
 };
