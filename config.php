@@ -1,6 +1,6 @@
 <?php
 return array(
-        'api' => 'http://pool.woolongs.com:11898',
+        'api' => 'http://162.219.245.108:11898',
         'blockTargetInterval' => 120,
         'coinUnits' => 100000000
 );
