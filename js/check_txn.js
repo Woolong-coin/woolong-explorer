@@ -2,7 +2,7 @@ function pubKeyFromExtra(bin){
     var pub = false;
     while (bin.length > 0 && bin[0] == 0) {
         bin = bin.slice(1, bin.length);
-    }
+    }    
     if (bin[0] == 1 && bin.length >= 65) {
         pub = bin.slice(1,65);
     }
@@ -19,7 +19,7 @@ function checkTxn(transactionResponse, privateKey, address, privateKeyType) {
     var txDetails = transactionResponse.txDetails;
     var addrHex = cnBase58.decode(address);
     var hash = txDetails.hash;
-
+   
     var results = {
         error: false,
         total_owned: 0,
@@ -29,7 +29,7 @@ function checkTxn(transactionResponse, privateKey, address, privateKeyType) {
     var s = 8, m = s + 64, e = m + 64; //offsets
     if (privateKey.length !== 64 || validHex(privateKey) !== true){
         results.error = "Invalid private key.";
-    } else if (address.length != 97 || (addrHex.slice(-s) !== cn_fast_hash(addrHex.slice(0,-s)).slice(0,s))) { //Change from 99 to 97
+    } else if (address.length != 99 || (addrHex.slice(-s) !== cn_fast_hash(addrHex.slice(0,-s)).slice(0,s))) {
         results.error = "Bad address";
     } else if (privateKeyType === 'view' && addrHex.slice(m,e) !== sec_key_to_pub(privateKey)) {
 	results.error = "Secret View key does not match address.";
@@ -56,7 +56,7 @@ function checkTxn(transactionResponse, privateKey, address, privateKeyType) {
                     results.unowned.push([i, txn.vout[i].target.key, amount]);
                 }
             }
-
+            
         }
     }
     return results;
@@ -64,18 +64,18 @@ function checkTxn(transactionResponse, privateKey, address, privateKeyType) {
 
 var getTxnRequest;
 function getTxn(transactionHash, cb) {
-    if (getTxnRequest) { getTxnRequest.abort(); }
-
+    if (getTxnRequest) { getTxnRequest.abort(); }       
+  
     getTxnRequest = $.ajax({
         url: api + "/json_rpc",
-        method: "POST",
+        method: "POST", 
         data: JSON.stringify({
             jsonrpc:"2.0",
             id: "blockexplorer",
             method:"f_transaction_json",
             params: {
                 hash: transactionHash
-            }
+            } 
         }),
         dataType: "json",
         error: function(resp) {
@@ -92,7 +92,7 @@ var txnLink = $("#txn_link");
 $("#check_transaction").click(function() {
     getTxn( transactionHash.val(), function(response) {
         if (response.error) {
-            //TODO proper error display
+            //TODO proper error display 
             alert(response.error.message);
         } else {
 	    var privateKeyType = $("[name=keyType]:checked").val();
