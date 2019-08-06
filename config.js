@@ -10,8 +10,7 @@ var refreshDelay = 30000;
 var networkStat = {
  "WOO": [
 	["pool.woolongs.com", "http://pool.woolongs.com:8117"],
-	["woo.cryptonote.club", "https://woo.cryptonote.club:8199"]
-	
+	["woo.cryptonote.club", "https://woo.cryptonote.club:8199"]	
  ]
 };
 
