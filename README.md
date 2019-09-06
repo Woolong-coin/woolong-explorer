@@ -1,4 +1,4 @@
-# Woolong-Blockchain-Explorer
+# Woolong Blockchain Explorer
 Block explorer for Woolong CryptoNote based cryptocurrency.
 
 #### Installation
@@ -9,10 +9,8 @@ Block explorer for Woolong CryptoNote based cryptocurrency.
 ```
 2) Just upload to your website and change 'api' variable in config.js to point to your daemon.
 
-
 ### Development
-Donate: [WOO] `WwaFjmWQrNG1h1bSVcP8UjKYL1nHRHp5sGVVSX9pZmtFjfPFfBi4XoJCWewvjXU4gxGmuiNpZSBLd4sgRWnusrNS15x8facrx`
+Donate: [WOO] WwaFjmWQrNG1h1bSVcP8UjKYL1nHRHp5sGVVSX9pZmtFjfPFfBi4XoJCWewvjXU4gxGmuiNpZSBLd4sgRWnusrNS15x8facrx
 
 ### Note
-
 A lot of this code is from the great Karbovanets/Karbowanec-Blockchain-Explorer
